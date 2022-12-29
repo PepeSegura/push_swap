@@ -6,7 +6,7 @@
 #    By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/01 13:27:49 by psegura-          #+#    #+#              #
-#    Updated: 2022/12/29 20:54:12 by psegura-         ###   ########.fr        #
+#    Updated: 2022/12/29 22:59:10 by psegura-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,9 +14,12 @@ NAME = push_swap
 
 SRCS =					\
 		srcs/main.c		\
-		srcs/parser.c	\
 		srcs/utils.c	\
+		srcs/parser.c	\
 		srcs/nbr_count.c\
+		srcs/moves_a.c	\
+		srcs/moves_b.c	\
+		srcs/moves_ab.c	\
 
 
 OBJS = $(SRCS:.c=.o)
