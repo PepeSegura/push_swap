@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 16:44:42 by psegura-          #+#    #+#             */
-/*   Updated: 2022/11/28 18:15:51 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/12/30 14:16:22 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ void		ft_bzero(void *s, size_t n);
 void		*ft_calloc(size_t count, size_t size);
 
 int			ft_atoi(const char *str);
+long		ft_atoi_long(const char *str);
 char		*ft_itoa(int n);
 
 char		*ft_substr(char const *s, unsigned int start, size_t len);

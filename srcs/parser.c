@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 15:51:30 by psegura-          #+#    #+#             */
-/*   Updated: 2022/12/29 22:04:53 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/12/30 14:55:57 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,25 +62,25 @@ int	ft_nbr_count(t_arguments *args)
 	return (nbr_count);
 }
 
-int	*ft_store_numbers(t_arguments *args, t_cosas *cosas)
+long	*ft_store_numbers(t_cosas *c)
 {
-	int		*numbers;
+	long	*numbers;
 
-	cosas->k = 1;
-	cosas->number_count = ft_nbr_count(args);
-	numbers = (int *)malloc(sizeof(int) * cosas->number_count);
+	c->k = 1;
+	c->number_count = ft_nbr_count(&c->args);
+	numbers = (long *)malloc(sizeof(long) * c->number_count);
 	if (!numbers)
 		ft_print_error("Malloc KO\n");
-	while (cosas->i < cosas->number_count)
+	while (c->i < c->number_count)
 	{
-		cosas->matrix = ft_split(args->argv[cosas->k], ' ');
-		if (cosas->matrix == NULL)
+		c->matrix = ft_split(c->args.argv[c->k], ' ');
+		if (c->matrix == NULL)
 			ft_print_error("Malloc KO\n");
-		cosas->j = 0;
-		while (cosas->matrix && cosas->matrix[cosas->j] != NULL)
-			numbers[cosas->i++] = ft_atoi(cosas->matrix[cosas->j++]);
-		ft_free_matrix(cosas->matrix);
-		cosas->k++;
+		c->j = 0;
+		while (c->matrix && c->matrix[c->j] != NULL)
+			numbers[c->i++] = ft_atoi_long(c->matrix[c->j++]);
+		ft_free_matrix(c->matrix);
+		c->k++;
 	}
 	return (numbers);
 }

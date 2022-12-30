@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 14:49:54 by psegura-          #+#    #+#             */
-/*   Updated: 2022/12/29 22:24:36 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/12/30 15:33:09 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,18 +45,19 @@ typedef struct s_list
 
 /*_____MAIN_ARGUMENTS_____*/
 typedef struct s_arguments {
-	char	**argv;
-	int		argc;
+	char		**argv;
+	int			argc;
 }		t_arguments;
 
 /*__STRUCT_STORE_NUMBERS__*/
 typedef struct s_cosas {
-	char	**matrix;
-	int		i;
-	int		j;
-	int		k;
-	int		number_count;
-	int		moves_count;
+	t_arguments	args;
+	char		**matrix;
+	int			i;
+	int			j;
+	int			k;
+	int			number_count;
+	int			moves_count;
 }		t_cosas;
 
 /*__MAIN__*/
@@ -65,10 +66,10 @@ int		ft_parser(t_arguments *a);
 /*__UTILS__*/
 int		ft_matrix_len(char **matrix);
 void	ft_print_error(char *str);
-void	ft_check_repeat(int *numbers, int size);
+void	ft_check_repeat(long *numbers, int size);
 
 /*__NUMBER_COUNT__*/
 int		ft_nbr_count(t_arguments *args);
-int		*ft_store_numbers(t_arguments *args, t_cosas *cosas);
+long	*ft_store_numbers(t_cosas *cosas);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 15:51:44 by psegura-          #+#    #+#             */
-/*   Updated: 2022/12/29 22:28:36 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/12/30 16:15:13 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,23 @@
 
 int	main(int argc, char **argv)
 {
-	t_arguments	args;
-	t_cosas		cosas;
-	int			*numbers;
+	t_cosas		c;
+	long		*numbers;
+	int			i;
 
-	args.argc = argc;
-	args.argv = argv;
-	ft_memset(&cosas, 0, sizeof(t_cosas));
-	if (ft_parser(&args) == 0)
+	i = -1;
+	ft_memset(&c, 0, sizeof(t_cosas));
+	c.args.argc = argc;
+	c.args.argv = argv;
+	if (ft_parser(&c.args) == 0)
 		ft_print_error("Invalid characters in the arguments\n");
-	if (ft_nbr_count(&args) == 0)
+	if (ft_nbr_count(&c.args) == 0)
 		ft_print_error("There is no numbers\n");
-	numbers = ft_store_numbers(&args, &cosas);
-	ft_check_repeat(numbers, cosas.number_count);
+	numbers = ft_store_numbers(&c);
+	ft_check_repeat(numbers, c.number_count);
 	/*BUCLE PARA VER VALORES DEL ARRAY*/
-	int i = -1;
-	while (++i < cosas.number_count)
-		printf("numeros[%d] -> [%d]\n", i, numbers[i]);
+	while (++i < c.number_count)
+		printf("numeros[%d] -> [%ld]\n", i, numbers[i]);
 	/*BUCLE PARA VER VALORES DEL ARRAY*/
 	system("leaks -q push_swap");
 	return (0);
