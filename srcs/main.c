@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 15:51:44 by psegura-          #+#    #+#             */
-/*   Updated: 2022/12/31 04:58:28 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/12/31 18:47:13 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int	main(int argc, char **argv)
 	numbers = ft_store_numbers(&c);
 	ft_check_repeat(numbers, c.number_count);
 	stack_a = ft_create_stacks(numbers, &c, stack_a);
+	ft_choose_algorithm(stack_a, stack_b, &c);
 	return (0);
 }
 

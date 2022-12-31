@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 14:49:54 by psegura-          #+#    #+#             */
-/*   Updated: 2022/12/31 04:38:37 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/12/31 19:14:53 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,11 +62,19 @@ typedef struct s_cosas {
 
 /*__MAIN__*/
 int		ft_parser(t_arguments *a);
+void	ft_choose_algorithm(t_list *stack_a, t_list *stack_b, t_cosas *cosas);
+void	ft_sort_max_3(t_list *stack_a);
+void	ft_sort_max_5(t_list *stack_a, t_list *stack_b, t_cosas *cosas);
+void	ft_sort_max_100(t_list *stack_a, t_list *stack_b, t_cosas *cosas);
 
 /*__UTILS__*/
 int		ft_matrix_len(char **matrix);
 void	ft_print_error(char *str);
 void	ft_check_repeat(long *numbers, int size);
+int		ft_is_ordered(t_list *stack_a);
+int		find_min(t_list *stack);
+int		find_max(t_list *stack);
+int		find_num(t_list *stack, int num);
 void	print_stack(t_list *stack, char letter);
 
 /*__NUMBER_COUNT__*/

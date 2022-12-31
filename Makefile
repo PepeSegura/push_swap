@@ -6,7 +6,7 @@
 #    By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/01 13:27:49 by psegura-          #+#    #+#              #
-#    Updated: 2022/12/30 18:53:28 by psegura-         ###   ########.fr        #
+#    Updated: 2022/12/31 18:16:17 by psegura-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,8 @@ SRCS =							\
 		srcs/moves_b.c			\
 		srcs/moves_ab.c			\
 		srcs/sort_3.c			\
+		srcs/sort_list.c		\
+		srcs/tools.c			\
 		srcs/create_stacks.c	\
 
 
