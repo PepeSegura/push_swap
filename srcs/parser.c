@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 15:51:30 by psegura-          #+#    #+#             */
-/*   Updated: 2022/12/30 14:55:57 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/12/31 00:31:16 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,10 @@ static int	ft_is_nbr_space(char *str)
 	{
 		if ((str[i] == ' ' || ft_isdigit(str[i]) == 1
 				|| ((str[i] == '-' || str[i] == '+')
-					&& ft_isdigit(str[i + 1]) == 1)))
+					&& ft_isdigit(str[i + 1]) == 1 && str[i - 1] == ' ')))
+			i++;
+		else if ((i == 0 && (str[i] == '-' || str[i] == '+'))
+			&& ft_isdigit(str[i + 1]) == 1)
 			i++;
 		else
 			return (0);

@@ -6,20 +6,22 @@
 #    By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/01 13:27:49 by psegura-          #+#    #+#              #
-#    Updated: 2022/12/30 15:41:57 by psegura-         ###   ########.fr        #
+#    Updated: 2022/12/30 18:53:28 by psegura-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-SRCS =					\
-		srcs/main.c		\
-		srcs/utils.c	\
-		srcs/parser.c	\
-		srcs/nbr_count.c\
-		srcs/moves_a.c	\
-		srcs/moves_b.c	\
-		srcs/moves_ab.c	\
+SRCS =							\
+		srcs/main.c				\
+		srcs/utils.c			\
+		srcs/parser.c			\
+		srcs/nbr_count.c		\
+		srcs/moves_a.c			\
+		srcs/moves_b.c			\
+		srcs/moves_ab.c			\
+		srcs/sort_3.c			\
+		srcs/create_stacks.c	\
 
 
 OBJS = $(SRCS:.c=.o)
@@ -28,7 +30,7 @@ OBJSB = $(SRCS:.c=.ob)
 LIB = libft/libft.a
 
 CC = gcc
-CFLAGS =  -Wall -Wextra -Werror -I inc -I libft
+CFLAGS =  -Wall -Wextra -Werror -I inc -I libft -g3
 
 $(NAME): $(OBJS)
 	@make -C libft

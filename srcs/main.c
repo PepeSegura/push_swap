@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 15:51:44 by psegura-          #+#    #+#             */
-/*   Updated: 2022/12/30 16:15:13 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/12/31 04:58:28 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,38 @@ int	main(int argc, char **argv)
 {
 	t_cosas		c;
 	long		*numbers;
-	int			i;
+	t_list		*stack_a;
+	t_list		*stack_b;
 
-	i = -1;
 	ft_memset(&c, 0, sizeof(t_cosas));
 	c.args.argc = argc;
 	c.args.argv = argv;
+	stack_a = NULL;
+	stack_b = NULL;
 	if (ft_parser(&c.args) == 0)
 		ft_print_error("Invalid characters in the arguments\n");
 	if (ft_nbr_count(&c.args) == 0)
 		ft_print_error("There is no numbers\n");
 	numbers = ft_store_numbers(&c);
 	ft_check_repeat(numbers, c.number_count);
-	/*BUCLE PARA VER VALORES DEL ARRAY*/
-	while (++i < c.number_count)
-		printf("numeros[%d] -> [%ld]\n", i, numbers[i]);
-	/*BUCLE PARA VER VALORES DEL ARRAY*/
-	system("leaks -q push_swap");
+	stack_a = ft_create_stacks(numbers, &c, stack_a);
 	return (0);
 }
+
+	// print_stack(stack_a, 'A');
+	// print_stack(stack_b, 'B');
+/*
+swap_a(&stack_a);
+push_a(&stack_a, &stack_b);
+rotate_a(&stack_a);
+rrotate_a(&stack_a);
+
+swap_b(&stack_b);
+push_b(&stack_a, &stack_b);
+rotate_b(&stack_b);
+rrotate_b(&stack_b);
+
+swap_ab(&stack_a, &stack_b);
+rotate_ab(&stack_a, &stack_b);
+rrotate_ab(&stack_a, &stack_b);
+*/

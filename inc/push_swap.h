@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 14:49:54 by psegura-          #+#    #+#             */
-/*   Updated: 2022/12/30 15:33:09 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/12/31 04:38:37 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,9 +67,30 @@ int		ft_parser(t_arguments *a);
 int		ft_matrix_len(char **matrix);
 void	ft_print_error(char *str);
 void	ft_check_repeat(long *numbers, int size);
+void	print_stack(t_list *stack, char letter);
 
 /*__NUMBER_COUNT__*/
 int		ft_nbr_count(t_arguments *args);
 long	*ft_store_numbers(t_cosas *cosas);
+
+/*__LISTS__*/
+t_list	*ft_create_stacks(long *numbers, t_cosas *c, t_list *stack_a);
+
+/*__MOVES_A__*/
+void	swap_a(t_list **stack_a);
+void	push_a(t_list **stack_a, t_list **stack_b);
+void	rotate_a(t_list **stack_a);
+void	rrotate_a(t_list **stack_a);
+
+/*__MOVES_B__*/
+void	swap_b(t_list **stack_b);
+void	push_b(t_list **stack_a, t_list **stack_b);
+void	rotate_b(t_list **stack_b);
+void	rrotate_b(t_list **stack_b);
+
+/*__MOVES_AB__*/
+void	swap_ab(t_list **stack_a, t_list **stack_b);
+void	rotate_ab(t_list **stack_a, t_list **stack_b);
+void	rrotate_ab(t_list **stack_a, t_list **stack_b);
 
 #endif
