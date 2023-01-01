@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 23:00:39 by psegura-          #+#    #+#             */
-/*   Updated: 2022/12/31 04:41:38 by psegura-         ###   ########.fr       */
+/*   Updated: 2023/01/01 16:44:06 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	swap_b(t_list **stack_b)
 	write(1, "sb\n", 3);
 }
 
-void	push_b(t_list **stack_a, t_list **stack_b)
+void	push_b(t_list **stack_a, t_list **stack_b, t_cosas *cosas)
 {
 	t_list	*temp;
 
@@ -37,6 +37,8 @@ void	push_b(t_list **stack_a, t_list **stack_b)
 	*stack_a = (*stack_a)->next;
 	temp->next = *stack_b;
 	*stack_b = temp;
+	cosas->stack_a_size--;
+	cosas->stack_b_size++;
 	write(1, "pb\n", 3);
 }
 

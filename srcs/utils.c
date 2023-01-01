@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 17:46:24 by psegura-          #+#    #+#             */
-/*   Updated: 2022/12/31 04:39:35 by psegura-         ###   ########.fr       */
+/*   Updated: 2023/01/01 12:54:00 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,12 @@ void	ft_print_error(char *str)
 	exit(EXIT_FAILURE);
 }
 
-void	print_stack(t_list *stack, char letter)
+void	ft_print_list(t_list *stack, char *str)
 {
 	int	i;
 
 	i = 0;
-	printf("Stack_%c:\n", letter);
+	printf("Stack_%s:\n", str);
 	while (stack != NULL)
 	{
 		printf("\tPos: [%i] Content: [%ld]\n", i, (long)stack->content);

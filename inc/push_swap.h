@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 14:49:54 by psegura-          #+#    #+#             */
-/*   Updated: 2022/12/31 19:14:53 by psegura-         ###   ########.fr       */
+/*   Updated: 2023/01/01 20:33:47 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,14 +58,16 @@ typedef struct s_cosas {
 	int			k;
 	int			number_count;
 	int			moves_count;
+	int			stack_a_size;
+	int			stack_b_size;
 }		t_cosas;
 
 /*__MAIN__*/
 int		ft_parser(t_arguments *a);
 void	ft_choose_algorithm(t_list *stack_a, t_list *stack_b, t_cosas *cosas);
 void	ft_sort_max_3(t_list *stack_a);
-void	ft_sort_max_5(t_list *stack_a, t_list *stack_b, t_cosas *cosas);
-void	ft_sort_max_100(t_list *stack_a, t_list *stack_b, t_cosas *cosas);
+void	ft_sort_max_10(t_list *stack_a, t_list *stack_b, t_cosas *cosas);
+void	ft_sort_max_500(t_list *stack_a, t_list *stack_b, t_cosas *cosas);
 
 /*__UTILS__*/
 int		ft_matrix_len(char **matrix);
@@ -75,7 +77,7 @@ int		ft_is_ordered(t_list *stack_a);
 int		find_min(t_list *stack);
 int		find_max(t_list *stack);
 int		find_num(t_list *stack, int num);
-void	print_stack(t_list *stack, char letter);
+void	ft_print_list(t_list *stack, char *str);
 
 /*__NUMBER_COUNT__*/
 int		ft_nbr_count(t_arguments *args);
@@ -86,13 +88,13 @@ t_list	*ft_create_stacks(long *numbers, t_cosas *c, t_list *stack_a);
 
 /*__MOVES_A__*/
 void	swap_a(t_list **stack_a);
-void	push_a(t_list **stack_a, t_list **stack_b);
+void	push_a(t_list **stack_a, t_list **stack_b, t_cosas *cosas);
 void	rotate_a(t_list **stack_a);
 void	rrotate_a(t_list **stack_a);
 
 /*__MOVES_B__*/
 void	swap_b(t_list **stack_b);
-void	push_b(t_list **stack_a, t_list **stack_b);
+void	push_b(t_list **stack_a, t_list **stack_b, t_cosas *cosas);
 void	rotate_b(t_list **stack_b);
 void	rrotate_b(t_list **stack_b);
 
