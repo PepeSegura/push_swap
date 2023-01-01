@@ -13,13 +13,13 @@ optimized data sorting.</p>
 |:------:|:---------: |
 | **1** | **3**       |
 
-<h3>5 Numbers:</h3>
+<h3><em><strong>5 Numbers:</strong></em></h3>
 
 | Points | Max_Moves  |
 |:------:|:---------: |
 | **1** | **12**      |
 
-<h3>100 Numbers:</h3>
+<h3><em><strong>100 Numbers:</strong></em></h3>
 
 | Points | Max_Moves  |
 |:------:|:---------: |
@@ -29,7 +29,7 @@ optimized data sorting.</p>
 | **2** | **1300**    |
 | **1** | **1500**    |
 
-<h3>500 Numbers:</h3>
+<h3><em><strong>500 Numbers:</strong></em></h3>
 
 | Points | Max_Moves  |
 |:------:|:---------: |
