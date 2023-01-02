@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 14:49:54 by psegura-          #+#    #+#             */
-/*   Updated: 2023/01/01 20:33:47 by psegura-         ###   ########.fr       */
+/*   Updated: 2023/01/02 20:45:39 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ int		ft_matrix_len(char **matrix);
 void	ft_print_error(char *str);
 void	ft_check_repeat(long *numbers, int size);
 int		ft_is_ordered(t_list *stack_a);
+void	ft_sort_tab(long *numbers, int size);
 int		find_min(t_list *stack);
 int		find_max(t_list *stack);
 int		find_num(t_list *stack, int num);

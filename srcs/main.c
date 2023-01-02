@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 15:51:44 by psegura-          #+#    #+#             */
-/*   Updated: 2022/12/31 18:47:13 by psegura-         ###   ########.fr       */
+/*   Updated: 2023/01/02 20:47:46 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,11 @@ int	main(int argc, char **argv)
 		ft_print_error("There is no numbers\n");
 	numbers = ft_store_numbers(&c);
 	ft_check_repeat(numbers, c.number_count);
+	ft_sort_tab(numbers, c.number_count);
 	stack_a = ft_create_stacks(numbers, &c, stack_a);
+	ft_print_list(stack_a, "A");
 	ft_choose_algorithm(stack_a, stack_b, &c);
+	system("leaks -q push_swap");
 	return (0);
 }
 
