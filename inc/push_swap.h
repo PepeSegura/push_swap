@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 14:49:54 by psegura-          #+#    #+#             */
-/*   Updated: 2023/01/03 16:49:27 by psegura-         ###   ########.fr       */
+/*   Updated: 2023/01/03 17:27:52 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,10 +78,10 @@ int		ft_nbr_count(t_arguments *args);
 long	*ft_store_numbers(t_cosas *c);
 
 /*__SORT_LIST__*/
-void	ft_choose_algorithm(t_list *stack_a, t_list *stack_b, t_cosas *cosas);
-void	ft_sort_max_3(t_list *stack_a);
-void	ft_sort_max_10(t_list *stack_a, t_list *stack_b, t_cosas *cosas);
-void	ft_sort_max_500(t_list *stack_a, t_list *stack_b, t_cosas *cosas);
+void	ft_choose_algorithm(t_list **stack_a, t_list **stack_b, t_cosas *cosas);
+void	ft_sort_max_3(t_list **stack_a);
+void	ft_sort_max_10(t_list **stack_a, t_list **stack_b, t_cosas *cosas);
+void	ft_sort_max_500(t_list **stack_a, t_list **stack_b, t_cosas *cosas);
 
 /*__TAB_UTILS__*/
 void	ft_bubble_sort(long *tab, int size);
