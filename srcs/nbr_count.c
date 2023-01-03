@@ -6,14 +6,14 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 18:05:09 by psegura-          #+#    #+#             */
-/*   Updated: 2022/12/30 15:00:42 by psegura-         ###   ########.fr       */
+/*   Updated: 2023/01/03 15:35:13 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <limits.h>
 
-static int	ft_already_checked(int number, long *numbers, int i)
+int	ft_already_checked(int number, long *numbers, int i)
 {
 	i--;
 	while (i >= 0)

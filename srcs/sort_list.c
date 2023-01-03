@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 18:09:46 by psegura-          #+#    #+#             */
-/*   Updated: 2023/01/01 20:34:54 by psegura-         ###   ########.fr       */
+/*   Updated: 2023/01/03 17:02:34 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@ void	ft_choose_algorithm(t_list *stack_a, t_list *stack_b, t_cosas *cosas)
 		return ;
 	else if (cosas->number_count == 2 && ft_is_ordered(stack_a) == 0)
 		swap_a(&stack_a);
-	else if (cosas->number_count <= 10)
+	else if (cosas->number_count == 3)
+		ft_sort_max_3(stack_a);
+	else if (cosas->number_count <= 45)
 		ft_sort_max_10(stack_a, stack_b, cosas);
 	else
 		ft_sort_max_500(stack_a, stack_b, cosas);
@@ -70,4 +72,31 @@ void	ft_sort_max_10(t_list *stack_a, t_list *stack_b, t_cosas *cosas)
 	ft_sort_max_3(stack_a);
 	while (stack_b)
 		push_a(&stack_a, &stack_b, cosas);
+}
+
+void	ft_sort_max_500(t_list *stack_a, t_list *stack_b, t_cosas *c)
+{
+	int	tmp;
+	int	size;
+	int	nbr_bites;
+
+	c->i = -1;
+	nbr_bites = ft_max_bites(stack_a);
+	size = ft_lstsize(stack_a);
+	while (++c->i < nbr_bites)
+	{
+		c->j = -1;
+		while (++c->j < size)
+		{
+			tmp = (int)stack_a->content;
+			if ((tmp >> c->i & 1) == 1)
+				rotate_a(&stack_a);
+			else if (ft_is_ordered(stack_a) == 1)
+				break ;
+			else
+				push_b(&stack_a, &stack_b, c);
+		}
+		while (ft_lstsize(stack_b) != 0)
+			push_a(&stack_a, &stack_b, c);
+	}
 }

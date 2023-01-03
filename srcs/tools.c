@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 18:13:06 by psegura-          #+#    #+#             */
-/*   Updated: 2022/12/31 18:27:40 by psegura-         ###   ########.fr       */
+/*   Updated: 2023/01/03 15:44:23 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,4 +82,16 @@ int	find_num(t_list *stack, int num)
 		count++;
 	}
 	return (count);
+}
+
+int	ft_max_bites(t_list *list)
+{
+	int	nbr_bites;
+	int	max;
+
+	max = ft_lstsize(list) - 1;
+	nbr_bites = 0;
+	while ((max >> nbr_bites) != 0)
+		nbr_bites++;
+	return (nbr_bites);
 }

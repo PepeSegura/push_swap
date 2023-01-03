@@ -6,13 +6,13 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 15:51:30 by psegura-          #+#    #+#             */
-/*   Updated: 2022/12/31 00:31:16 by psegura-         ###   ########.fr       */
+/*   Updated: 2023/01/03 15:36:11 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	ft_is_nbr_space(char *str)
+int	ft_is_nbr_space(char *str)
 {
 	int	i;
 
