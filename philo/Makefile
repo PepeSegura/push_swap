@@ -6,47 +6,30 @@
 #    By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/01 13:27:49 by psegura-          #+#    #+#              #
-#    Updated: 2023/01/03 17:49:40 by psegura-         ###   ########.fr        #
+#    Updated: 2023/01/05 11:37:45 by psegura-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = push_swap
+NAME = philo
 
 SRCS =							\
-		srcs/create_stacks.c	\
 		srcs/main.c				\
-		srcs/moves_a.c			\
-		srcs/moves_b.c			\
-		srcs/moves_ab.c			\
-		srcs/nbr_count.c		\
-		srcs/parser.c			\
-		srcs/sort_list.c		\
-		srcs/tab_utils.c		\
-		srcs/tools.c			\
-		srcs/utils.c			\
 
 OBJS = $(SRCS:.c=.o)
 
-LIB = libft/libft.a
-
 CC = gcc
-CFLAGS =  -Wall -Wextra -Werror -I inc -I libft -g3
+CFLAGS =  -Wall -Wextra -Werror -I inc -g3
 
 $(NAME): $(OBJS)
-	@make -C libft
-	@rm -rf $(OBJSB)
-	$(CC) $(CFLAGS) $(OBJS) $(LIB) -o $(NAME)
-	@echo "📈 push_swap Done 📉"
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	@echo "🧵 philosophers Done 🍽"
 	
 all: $(NAME)
 
 clean:
-	@make clean -C libft
 	@rm -rf $(OBJS)
-	@rm -rf $(OBJSB)
 
 fclean: clean
-	@make fclean -C libft
 	@rm -f $(NAME)
 
 re: fclean all

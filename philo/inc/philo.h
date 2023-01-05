@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
+/*   philo.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/28 00:18:45 by psegura-          #+#    #+#             */
-/*   Updated: 2022/08/15 02:54:45 by psegura-         ###   ########.fr       */
+/*   Created: 2022/11/19 14:49:54 by psegura-          #+#    #+#             */
+/*   Updated: 2023/01/05 11:30:09 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef PHILO_H
+# define PHILO_H
 
-/**
- * Adds a new element to the beginning of a list.
- * 
- * @param lst A pointer to a pointer to a linked list.
- * @param new the new element to add to the list 
- */
-void	ft_lstadd_front(t_list **lst, t_list *new)
-{
-	new->next = *lst;
-	*lst = new;
-}
+/*__HEADER FILES__*/
+# include "philo.h"
+# include "libs.h"
+
+#endif
