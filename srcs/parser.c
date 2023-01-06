@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 15:51:30 by psegura-          #+#    #+#             */
-/*   Updated: 2023/01/03 15:36:11 by psegura-         ###   ########.fr       */
+/*   Updated: 2023/01/06 13:34:24 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,15 +73,20 @@ long	*ft_store_numbers(t_cosas *c)
 	c->number_count = ft_nbr_count(&c->args);
 	numbers = (long *)malloc(sizeof(long) * c->number_count);
 	if (!numbers)
-		ft_print_error("Malloc KO\n");
+		ft_print_error("Malloc KO.\n");
 	while (c->i < c->number_count)
 	{
 		c->matrix = ft_split(c->args.argv[c->k], ' ');
 		if (c->matrix == NULL)
-			ft_print_error("Malloc KO\n");
+			ft_print_error("Malloc KO.\n");
 		c->j = 0;
 		while (c->matrix && c->matrix[c->j] != NULL)
-			numbers[c->i++] = ft_atoi_long(c->matrix[c->j++]);
+		{
+			if (ft_strlen(c->matrix[c->j]) <= 12)
+				numbers[c->i++] = ft_atoi_long(c->matrix[c->j++]);
+			else
+				ft_print_error("Number out of range.\n");
+		}
 		ft_free_matrix(c->matrix);
 		c->k++;
 	}

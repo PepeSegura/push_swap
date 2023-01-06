@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 18:05:09 by psegura-          #+#    #+#             */
-/*   Updated: 2023/01/03 15:35:13 by psegura-         ###   ########.fr       */
+/*   Updated: 2023/01/06 13:34:07 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ void	ft_check_repeat(long *numbers, int size)
 	while (i < size)
 	{
 		if (numbers[i] < INT_MIN || numbers[i] > INT_MAX)
-			ft_print_error("Number out of range\n");
+			ft_print_error("Number out of range.\n");
 		if (ft_already_checked(numbers[i], numbers, i) == 1)
-			ft_print_error("There are numbers repeated\n");
+			ft_print_error("There are numbers repeated.\n");
 		i++;
 	}
 }
