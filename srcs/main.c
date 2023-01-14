@@ -33,5 +33,6 @@ int	main(int argc, char **argv)
 	ft_sort_tab(numbers, c.number_count);
 	stack_a = ft_create_stacks(numbers, &c, stack_a);
 	ft_choose_algorithm(&stack_a, &stack_b, &c);
+	exit(EXIT_SUCCESS);
 	return (0);
 }
