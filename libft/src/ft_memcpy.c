@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 11:12:33 by psegura-          #+#    #+#             */
-/*   Updated: 2022/08/15 02:55:09 by psegura-         ###   ########.fr       */
+/*   Updated: 2023/04/10 17:24:46 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 
 	d = dst;
 	s = src;
-	if (dst == '\0' && src == '\0')
+	if (dst == 0 && src == 0)
 		return (NULL);
 	while (n > 0)
 	{

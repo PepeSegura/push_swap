@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 18:09:46 by psegura-          #+#    #+#             */
-/*   Updated: 2023/01/03 17:43:12 by psegura-         ###   ########.fr       */
+/*   Updated: 2023/04/11 00:12:02 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,7 @@ void	ft_sort_max_10(t_list **stack_a, t_list **stack_b, t_cosas *cosas)
 		}
 		if (ft_is_ordered(stack_a[0]) == 1)
 			break ;
-		if (find_num(stack_a[0], find_min(stack_a[0])) == 0)
-			push_b(stack_a, stack_b, cosas);
+		push_b(stack_a, stack_b, cosas);
 	}
 	ft_sort_max_3(stack_a);
 	while (stack_b[0])

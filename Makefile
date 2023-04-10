@@ -6,7 +6,7 @@
 #    By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/01 13:27:49 by psegura-          #+#    #+#              #
-#    Updated: 2023/01/03 17:49:40 by psegura-         ###   ########.fr        #
+#    Updated: 2023/04/10 17:24:18 by psegura-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ OBJS = $(SRCS:.c=.o)
 
 LIB = libft/libft.a
 
-CC = gcc
+CC = clang
 CFLAGS =  -Wall -Wextra -Werror -I inc -I libft -g3
 
 $(NAME): $(OBJS)
