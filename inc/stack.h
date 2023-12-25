@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 19:52:24 by psegura-          #+#    #+#             */
-/*   Updated: 2023/12/25 01:35:59 by psegura-         ###   ########.fr       */
+/*   Updated: 2023/12/25 03:07:58 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 typedef struct s_stack {
 	int				index;
 	int				content;
+	struct s_stack	*prev;
 	struct s_stack	*next;
 }	t_stack;
 
@@ -32,6 +33,12 @@ void	stack_delone(t_stack *stack);
 
 int		stack_size(t_stack *stack);
 
-void	print_stack(t_stack *stack);
+void	print_stack_content(t_stack *stack);
+void	print_stack_index(t_stack *stack);
+
+int		is_ordered(t_stack *stack);
+int		find_min(t_stack *stack);
+int		find_max(t_stack *stack);
+int		find_number(t_stack *stack, int number);
 
 #endif

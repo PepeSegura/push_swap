@@ -6,7 +6,7 @@
 #    By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/01 13:27:49 by psegura-          #+#    #+#              #
-#    Updated: 2023/12/24 23:41:21 by psegura-         ###   ########.fr        #
+#    Updated: 2023/12/25 03:39:24 by psegura-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,11 @@ SRCS =									\
 		srcs/stack/stack_new.c			\
 		srcs/stack/stack_size.c			\
 										\
+		srcs/algorithm/push_swap.c		\
+		srcs/algorithm/sort_3.c			\
+		srcs/algorithm/sort_5.c			\
+		srcs/algorithm/utils.c			\
+										\
 		srcs/moves/single.c				\
 		srcs/moves/double.c				\
 
@@ -47,7 +52,8 @@ $(NAME): objs $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) $(LIB) -o $(NAME)
 
 objs:
-	@mkdir -p	objs/srcs/moves objs/srcs/parser objs/srcs/stack
+	@mkdir -p	objs/srcs/moves		objs/srcs/parser	objs/srcs/stack	\
+				objs/srcs/algorithm
 
 objs/%.o: %.c
 	@$(CC) $(CFLAGS) -c $< -o $@

@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/02 20:04:21 by psegura-          #+#    #+#             */
-/*   Updated: 2023/12/25 03:29:02 by psegura-         ###   ########.fr       */
+/*   Created: 2023/12/25 02:17:23 by psegura-          #+#    #+#             */
+/*   Updated: 2023/12/25 03:38:18 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+# include "push_swap.h"
 
-void	store_numbers(t_stack **stack_a, t_info *info, const char *str);
-
-int	main(int argc, char **argv)
+void    push_swap(t_stack **a, t_stack **b, t_info *info)
 {
-	static t_info	info = {.size_a = 0, .size_b = 0};
-	static t_stack	*a;
-	static t_stack	*b;
-
-	parser(argc, argv);
-	create_stack(&a, &info, argv);
-	push_swap(&a, &b, &info);
-	// print_stack_content(a);
-	// print_stack_index(a);
-	return (0);
+    (void)b;
+    if (is_ordered(*a))
+        return ;
+    else if (info->size_a == 2 && !is_ordered(*a))
+        swap(a, 'a');
+    else if (info->size_a == 3)
+        sort_3(a);
+    else if (info->size_a < 5000)
+        sort_5(a, b, info);
 }

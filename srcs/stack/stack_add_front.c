@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 00:18:45 by psegura-          #+#    #+#             */
-/*   Updated: 2023/12/25 01:34:32 by psegura-         ###   ########.fr       */
+/*   Updated: 2023/12/25 02:10:26 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 
 void	stack_add_front(t_stack **stack, t_stack *new)
 {
-	new->next = *stack;
-	*stack = new;
+    if (!new)
+        return;
+    new->next = *stack;
+    new->prev = NULL;
+    if (*stack)
+        (*stack)->prev = new;
+    *stack = new;
 }

@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 21:37:13 by psegura-          #+#    #+#             */
-/*   Updated: 2023/12/25 01:27:36 by psegura-         ###   ########.fr       */
+/*   Updated: 2023/12/25 02:10:57 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,6 @@ void	create_stack(t_stack **stack_a, t_info *info, char **argv)
 	i = 0;
 	while (argv[++i])
 		store_numbers(stack_a, info, argv[i]);
-	// check_duplicates(*stack_a);
-	// add_index(stack_a);
+	check_duplicates(*stack_a);
+	add_index(stack_a);
 }
