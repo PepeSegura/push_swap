@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 19:03:14 by psegura-          #+#    #+#             */
-/*   Updated: 2023/12/24 23:49:21 by psegura-         ###   ########.fr       */
+/*   Updated: 2023/12/25 05:00:52 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,15 +67,15 @@ void	rotate(t_stack **stack, char c)
 
 void	rrotate(t_stack **stack, char c)
 {
-	t_stack	*last;
+    t_stack *last;
 
-	if (*stack == NULL || (*stack)->next == NULL)
-		return ;
-	last = stack_last(*stack);
-	// while (last->next != NULL)
-	// 	last = last->next;
-	last->next = *stack;
-	*stack = last->next;
-	last->next = NULL;
-	write_move("rr", c);
+    if (*stack == NULL || (*stack)->next == NULL)
+        return;
+    last = stack_last(*stack);
+    last->prev->next = NULL;
+    last->next = *stack;
+    last->prev = NULL;
+    (*stack)->prev = last;
+    *stack = last;
+    write_move("rr", c);
 }

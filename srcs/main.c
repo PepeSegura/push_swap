@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 20:04:21 by psegura-          #+#    #+#             */
-/*   Updated: 2023/12/25 03:29:02 by psegura-         ###   ########.fr       */
+/*   Updated: 2023/12/25 05:04:26 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ int	main(int argc, char **argv)
 	push_swap(&a, &b, &info);
 	// print_stack_content(a);
 	// print_stack_index(a);
-	return (0);
+	exit (EXIT_SUCCESS);
 }

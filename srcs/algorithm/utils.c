@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 02:17:23 by psegura-          #+#    #+#             */
-/*   Updated: 2023/12/25 04:21:03 by psegura-         ###   ########.fr       */
+/*   Updated: 2023/12/25 04:53:44 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	find_min(t_stack *stack)
 	if (!stack)
 		return (0);
 	if (!stack->next)
-		return (stack->content);
+		return (stack->index);
 	current = stack;
 	min = current->index;
 	while (current->next)
@@ -73,6 +73,7 @@ int	find_max(t_stack *stack)
 
 int	find_number(t_stack *stack, int number)
 {
+	// ft_dprintf(2,  "Buscando %d\n", number);
 	t_stack	*current;
 	int		index;
 
