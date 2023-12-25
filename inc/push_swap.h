@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 20:08:44 by psegura-          #+#    #+#             */
-/*   Updated: 2023/12/25 03:38:57 by psegura-         ###   ########.fr       */
+/*   Updated: 2023/12/25 03:54:43 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct s_info
 /* algorithm.c */
 void    sort_3(t_stack **stack);
 void    sort_5(t_stack **a, t_stack **b, t_info *info);
+void    sort_chunks(t_stack **a, t_stack **b, t_info *info);
 void    push_swap(t_stack **a, t_stack **b, t_info *info);
 
 /* parser.c */
