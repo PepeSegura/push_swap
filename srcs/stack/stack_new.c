@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 00:12:34 by psegura-          #+#    #+#             */
-/*   Updated: 2023/12/24 21:48:06 by psegura-         ###   ########.fr       */
+/*   Updated: 2023/12/26 21:57:11 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,11 @@ t_stack	*stack_new(int content)
 {
 	t_stack	*new;
 
-	new = ft_calloc(1, sizeof(t_stack));
+	new = malloc(sizeof(t_stack));
 	if (!new)
 		return (NULL);
 	new->content = content;
+	new->prev = NULL;
+	new->next = NULL;
 	return (new);
 }

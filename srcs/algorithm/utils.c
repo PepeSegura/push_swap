@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 02:17:23 by psegura-          #+#    #+#             */
-/*   Updated: 2023/12/25 04:53:44 by psegura-         ###   ########.fr       */
+/*   Updated: 2023/12/26 23:10:29 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,10 @@ int	find_top_chunk(t_stack *stack, int max)
 	{
 		// printf("TOP IX: %d MAX: %d\n", current->index, max);
 		if (current->index < max)
+		{
+			// printf("max: %d index_top: %d\n", max, current->index);
 			return (moves);
+		}
 		current = current->next;
 		moves++;
 	}
@@ -118,9 +121,23 @@ int	find_bottom_chunk(t_stack *stack, int max)
 	{
 		// printf("BOT IX: %d MAX: %d\n", current->index, max);
 		if (current->index < max)
-			return (moves);
+		{
+			// printf("max: %d index_bot: %d\n", max, current->index);
+			return (moves + 1);
+		}
 		current = current->prev;
 		moves++;
 	}
-	return (moves);
+	return (moves + 1);
+}
+
+int numbers_in_chunk(t_stack *stack, int start, int end)
+{
+    while (stack)
+	{
+        if (stack->index >= start && stack->index < end)
+            return (1);
+        stack = stack->next;
+    }
+    return (0);
 }

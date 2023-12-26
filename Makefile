@@ -6,7 +6,7 @@
 #    By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/01 13:27:49 by psegura-          #+#    #+#              #
-#    Updated: 2023/12/25 05:07:49 by psegura-         ###   ########.fr        #
+#    Updated: 2023/12/26 23:48:43 by psegura-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,7 @@ SRCS =									\
 		srcs/algorithm/push_swap.c		\
 		srcs/algorithm/sort_3.c			\
 		srcs/algorithm/sort_5.c			\
+		srcs/algorithm/chunks.c			\
 		srcs/algorithm/utils.c			\
 										\
 		srcs/moves/single.c				\
@@ -43,7 +44,7 @@ LIB = libft/libft.a
 
 CC = gcc
 
-CFLAGS = -Wall -Wextra -Werror #-fsanitize=address,leak
+CFLAGS = -Wall -Wextra -Werror -fsanitize=address,leak
 CFLAGS += -I inc -I libft
 
 

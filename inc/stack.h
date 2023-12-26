@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 19:52:24 by psegura-          #+#    #+#             */
-/*   Updated: 2023/12/25 04:02:52 by psegura-         ###   ########.fr       */
+/*   Updated: 2023/12/26 22:36:10 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ int		is_ordered(t_stack *stack);
 int		find_min(t_stack *stack);
 int		find_max(t_stack *stack);
 int		find_number(t_stack *stack, int number);
+
+int		numbers_in_chunk(t_stack *stack, int start, int end);
 
 int	find_top_chunk(t_stack *stack, int max);
 int	find_bottom_chunk(t_stack *stack, int max);

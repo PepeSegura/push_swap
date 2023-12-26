@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 19:03:14 by psegura-          #+#    #+#             */
-/*   Updated: 2023/12/25 05:00:52 by psegura-         ###   ########.fr       */
+/*   Updated: 2023/12/26 22:02:15 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,10 @@ void	swap(t_stack **stack, char c)
 	second = (*stack)->next;
 	(*stack)->next = second->next;
 	second->next = *stack;
+	second->prev = NULL;
+	if ((*stack)->next)
+		(*stack)->next->prev = *stack;
+	(*stack)->prev = second;
 	*stack = second;
 	write_move("s", c);
 }
@@ -30,10 +34,12 @@ void	push(char c, t_stack **dest, t_stack **src, t_info *info)
 	t_stack	*aux;
 
 	if (*src == NULL)
-		return ;
+		return;
 	aux = *src;
 	*src = (*src)->next;
 	aux->next = *dest;
+	if (*dest)
+		(*dest)->prev = aux;
 	*dest = aux;
 	if (c == 'a')
 	{
@@ -54,14 +60,15 @@ void	rotate(t_stack **stack, char c)
 	t_stack	*last;
 
 	if (*stack == NULL || (*stack)->next == NULL)
-		return ;
+		return;
 	new_head = (*stack)->next;
 	last = stack_last(*stack);
-	// while (last->next != NULL)
-	// 	last = last->next;
-	last->next = (*stack);
+	last->next = *stack;
 	(*stack)->next = NULL;
-	(*stack) = new_head;
+	(*stack)->prev = last;
+	*stack = new_head;
+	if (new_head)
+		new_head->prev = NULL;
 	write_move("r", c);
 }
 

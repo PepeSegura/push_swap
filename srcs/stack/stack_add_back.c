@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 16:04:42 by psegura-          #+#    #+#             */
-/*   Updated: 2023/12/25 02:08:33 by psegura-         ###   ########.fr       */
+/*   Updated: 2023/12/26 21:55:29 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,5 @@ void	stack_add_back(t_stack **stack, t_stack *new)
 	last = stack_last(*stack);
 	last->next = new;
 	new->prev = last;
+	new->next = NULL;
 }
