@@ -6,7 +6,7 @@
 #    By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/01 13:27:49 by psegura-          #+#    #+#              #
-#    Updated: 2023/12/31 20:35:29 by psegura-         ###   ########.fr        #
+#    Updated: 2023/12/31 20:42:17 by psegura-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -83,7 +83,7 @@ objs:
 	@mkdir -p	objs/srcs/moves objs/srcs/parser objs/srcs/stack \
 				objs/srcs/algorithm objs/srcs/bonus
 	@mkdir -p 	objs/srcs/algorithm/basic objs/srcs/algorithm/chunks \
-				objs/srcs/algorithm/radix objs/srcs/algorithm/check_cost
+				objs/srcs/algorithm/radix objs/srcs/algorithm/best_cost
 
 objsb:
 	@mkdir -p	objsb/srcs/moves objsb/srcs/parser objsb/srcs/stack \

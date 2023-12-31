@@ -3,6 +3,7 @@
 the lowest possible number of actions. To succeed you’ll have to manipulate various
 types of algorithms and choose the most appropriate solution (out of many) for an
 optimized data sorting.</p>
+<h3><a href="https://github.com/PepeSegura/push_swap_Tester"><em><strong> Tester </strong></em></a></h3>
 
 <h2>Grading - need 6 points to pass</h2>
 
