@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 20:04:21 by psegura-          #+#    #+#             */
-/*   Updated: 2023/12/26 23:25:54 by psegura-         ###   ########.fr       */
+/*   Updated: 2023/12/31 19:30:46 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,5 @@ int	main(int argc, char **argv)
 	parser(argc, argv);
 	create_stack(&a, &info, argv);
 	push_swap(&a, &b, &info);
-	// print_stack_content(a);
-	// print_stack_index(a);
 	exit (EXIT_SUCCESS);
 }

@@ -6,15 +6,15 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 21:56:18 by psegura-          #+#    #+#             */
-/*   Updated: 2023/12/24 22:47:05 by psegura-         ###   ########.fr       */
+/*   Updated: 2023/12/31 18:51:52 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	print_error(char *str)
+static void	print_error(void)
 {
-	ft_dprintf(2, "Error: %s\n", str);
+	ft_dprintf(2, "Error\n");
 	exit(EXIT_FAILURE);
 }
 
@@ -38,6 +38,6 @@ int	ft_atoi_limits(const char *str)
 	while (ft_isdigit(str[i]))
 		dest = (dest * 10) + (str[i++] - '0');
 	if ((dest * sign) > INT_MAX || (dest * sign) < INT_MIN)
-		print_error("Number out of range.");
+		print_error();
 	return ((int)(dest * sign));
 }

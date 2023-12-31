@@ -6,70 +6,109 @@
 #    By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/01 13:27:49 by psegura-          #+#    #+#              #
-#    Updated: 2023/12/26 23:48:43 by psegura-         ###   ########.fr        #
+#    Updated: 2023/12/31 20:11:57 by psegura-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 MAKEFLAGS += --no-print-directory
 
 NAME = push_swap
+BONUS = checker
 
 SRCS =									\
-		srcs/main.c						\
-		srcs/tools.c					\
-		srcs/parser/parser.c			\
+		main.c							\
+		tools.c							\
+		parser/parser.c					\
 										\
-		srcs/stack/create_stack.c		\
-		srcs/stack/stack_add_back.c		\
-		srcs/stack/stack_add_front.c	\
-		srcs/stack/stack_clear.c		\
-		srcs/stack/stack_printer.c		\
-		srcs/stack/stack_last.c			\
-		srcs/stack/stack_new.c			\
-		srcs/stack/stack_size.c			\
+		stack/create_stack.c			\
+		stack/stack_add_back.c			\
+		stack/stack_printer.c			\
+		stack/stack_last.c				\
+		stack/stack_new.c				\
+		stack/stack_size.c				\
 										\
-		srcs/algorithm/push_swap.c		\
-		srcs/algorithm/sort_3.c			\
-		srcs/algorithm/sort_5.c			\
-		srcs/algorithm/chunks.c			\
-		srcs/algorithm/utils.c			\
+		algorithm/push_swap.c			\
+		algorithm/basic/sort_3.c		\
+		algorithm/basic/sort_5.c		\
+		algorithm/chunks/chunks.c		\
+		algorithm/chunks/chunks_utils.c	\
+		algorithm/radix/radix.c			\
+		algorithm/utils.c				\
 										\
-		srcs/moves/single.c				\
-		srcs/moves/double.c				\
+		moves/single.c					\
+		moves/double.c					\
 
 
-OBJS = $(SRCS:%.c=objs/%.o)
+SRCB =									\
+		bonus/main.c					\
+		tools.c							\
+		parser/parser.c					\
+										\
+		stack/create_stack.c			\
+		stack/stack_add_back.c			\
+		stack/stack_last.c				\
+		stack/stack_new.c				\
+		stack/stack_size.c				\
+										\
+		moves/single.c					\
+		moves/double.c					\
+										\
+		algorithm/utils.c				\
+
+SRCS_PREFIX = $(addprefix srcs/, $(SRCS))
+SRCB_PREFIX = $(addprefix srcs/, $(SRCB))
+
+OBJS = $(SRCS_PREFIX:%.c=objs/%.o)
+OBJB = $(SRCB_PREFIX:%.c=objsb/%.o)
 
 LIB = libft/libft.a
 
 CC = gcc
 
-CFLAGS = -Wall -Wextra -Werror -fsanitize=address,leak
+CFLAGS = -Wall -Wextra -Werror #-fsanitize=address,leak
 CFLAGS += -I inc -I libft
 
+all: $(NAME)
+bonus: $(BONUS)
 
 $(NAME): objs $(OBJS)
 	@make -C libft
 	$(CC) $(CFLAGS) $(OBJS) $(LIB) -o $(NAME)
 
+$(BONUS): objsb $(OBJB)
+	@make -C libft
+	$(CC)  $(CFLAGS) $(OBJB) $(LIB) -o $(BONUS)
+
 objs:
-	@mkdir -p	objs/srcs/moves		objs/srcs/parser	objs/srcs/stack	\
-				objs/srcs/algorithm
+	@mkdir -p	objs/srcs/moves objs/srcs/parser objs/srcs/stack \
+				objs/srcs/algorithm objs/srcs/bonus
+	@mkdir -p 	objs/srcs/algorithm/basic objs/srcs/algorithm/chunks \
+				objs/srcs/algorithm/radix objs/srcs/algorithm/check_cost
+
+objsb:
+	@mkdir -p	objsb/srcs/moves objsb/srcs/parser objsb/srcs/stack \
+				objsb/srcs/algorithm objsb/srcs/bonus
 
 objs/%.o: %.c
 	@$(CC) $(CFLAGS) -c $< -o $@
+
+objsb/%.o: %.c
+	@$(CC) -D BONUS=1 $(CFLAGS) -c $< -o $@
 
 all: $(NAME)
 
 clean:
 	@make clean -C libft
-	@rm -rf objs
+	@rm -rf objs objsb
 
 fclean: clean
 	@make fclean -C libft
-	@rm -f $(NAME)
+	@rm -f $(NAME) $(BONUS)
 
 re:: fclean
 re:: all
 
-.PHONY: all clean fclean re
+norma:
+	@echo 6e6f726d696e65747465207372637320696e6320313e2f6465762f6e756c6c3b206966205b5b20243f202d65712030205d5d3b207468656e206e6f726d696e65747465207372637320696e633b20656c7365206e6f726d696e65747465207372637320696e63207c206772657020274572726f7227203b206669 | xxd -r -p | zsh
+
+.PHONY: all clean fclean re norma bonus

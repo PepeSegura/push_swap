@@ -6,11 +6,11 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 02:17:23 by psegura-          #+#    #+#             */
-/*   Updated: 2023/12/26 23:10:29 by psegura-         ###   ########.fr       */
+/*   Updated: 2023/12/31 19:54:42 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "push_swap.h"
+#include "push_swap.h"
 
 int	is_ordered(t_stack *stack)
 {
@@ -27,7 +27,7 @@ int	is_ordered(t_stack *stack)
 			return (0);
 		first = second;
 		second = second->next;
-	}	
+	}
 	return (1);
 }
 
@@ -73,7 +73,6 @@ int	find_max(t_stack *stack)
 
 int	find_number(t_stack *stack, int number)
 {
-	// ft_dprintf(2,  "Buscando %d\n", number);
 	t_stack	*current;
 	int		index;
 
@@ -87,57 +86,4 @@ int	find_number(t_stack *stack, int number)
 		index++;
 	}
 	return (index);
-}
-
-int	find_top_chunk(t_stack *stack, int max)
-{
-	t_stack	*current;
-	int		moves;
-
-	current = stack;
-	moves = 0;
-	while (current)
-	{
-		// printf("TOP IX: %d MAX: %d\n", current->index, max);
-		if (current->index < max)
-		{
-			// printf("max: %d index_top: %d\n", max, current->index);
-			return (moves);
-		}
-		current = current->next;
-		moves++;
-	}
-	return (moves);
-}
-
-int	find_bottom_chunk(t_stack *stack, int max)
-{
-	t_stack	*current;
-	int		moves;
-
-	current = stack_last(stack);
-	moves = 0;
-	while (current)
-	{
-		// printf("BOT IX: %d MAX: %d\n", current->index, max);
-		if (current->index < max)
-		{
-			// printf("max: %d index_bot: %d\n", max, current->index);
-			return (moves + 1);
-		}
-		current = current->prev;
-		moves++;
-	}
-	return (moves + 1);
-}
-
-int numbers_in_chunk(t_stack *stack, int start, int end)
-{
-    while (stack)
-	{
-        if (stack->index >= start && stack->index < end)
-            return (1);
-        stack = stack->next;
-    }
-    return (0);
 }

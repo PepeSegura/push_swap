@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 20:04:21 by psegura-          #+#    #+#             */
-/*   Updated: 2023/12/24 22:52:19 by psegura-         ###   ########.fr       */
+/*   Updated: 2023/12/31 18:50:08 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void	parser(int argc, char **argv)
 	int	i;
 
 	if (argc == 1)
-		print_error("Invalid number of arguments.");
+		exit(EXIT_SUCCESS);
 	i = 0;
 	while (argv[++i])
 		evaluate(argv[i]);

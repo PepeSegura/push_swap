@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 20:08:44 by psegura-          #+#    #+#             */
-/*   Updated: 2023/12/27 00:00:09 by psegura-         ###   ########.fr       */
+/*   Updated: 2023/12/31 19:51:50 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,18 @@ typedef struct s_info
 }		t_info;
 
 /* algorithm.c */
-void    sort_3(t_stack **stack);
-void    sort_5(t_stack **a, t_stack **b, t_info *info);
+void	sort_3(t_stack **stack);
+void	sort_5(t_stack **a, t_stack **b, t_info *info);
+
+/* chunks */
 void	sort_chunks(t_stack **a, t_stack **b, t_info *info, int chunks);
-void    push_swap(t_stack **a, t_stack **b, t_info *info);
+int		numbers_in_chunk(t_stack *stack, int start, int end);
+int		is_current_greater_than_b(t_stack *a, t_stack *b);
+
+/* radix */
+void	radix(t_stack **a, t_stack **b, t_info *info);
+
+void	push_swap(t_stack **a, t_stack **b, t_info *info);
 
 /* parser.c */
 int		choose_state(int state, char c);
@@ -44,9 +52,9 @@ void	swap(t_stack **stack, char c);
 void	rotate(t_stack **stack, char c);
 void	rrotate(t_stack **stack, char c);
 
-void	double_swap(t_stack **stack);
-void	double_rotate(t_stack **stack);
-void	double_rrotate(t_stack **stack);
+void	double_swap(t_stack **a, t_stack **b);
+void	double_rotate(t_stack **a, t_stack **b);
+void	double_rrotate(t_stack **a, t_stack **b);
 
 /* tools.c */
 void	print_error(char *str);

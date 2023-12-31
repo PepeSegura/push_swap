@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 19:52:24 by psegura-          #+#    #+#             */
-/*   Updated: 2023/12/26 22:36:10 by psegura-         ###   ########.fr       */
+/*   Updated: 2023/12/31 19:50:26 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,7 @@ t_stack	*stack_new(int content);
 t_stack	*stack_last(t_stack *stack);
 
 void	stack_add_back(t_stack **stack, t_stack *new);
-void	stack_add_front(t_stack **stack, t_stack *new);
 
-void	stack_clear(t_stack **stack);
 void	stack_delone(t_stack *stack);
 
 int		stack_size(t_stack *stack);
@@ -41,9 +39,7 @@ int		find_min(t_stack *stack);
 int		find_max(t_stack *stack);
 int		find_number(t_stack *stack, int number);
 
-int		numbers_in_chunk(t_stack *stack, int start, int end);
-
-int	find_top_chunk(t_stack *stack, int max);
-int	find_bottom_chunk(t_stack *stack, int max);
+int		find_top_chunk(t_stack *stack, int max);
+int		find_bottom_chunk(t_stack *stack, int max);
 
 #endif
