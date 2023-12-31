@@ -6,7 +6,7 @@
 #    By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/01 13:27:49 by psegura-          #+#    #+#              #
-#    Updated: 2023/12/31 20:11:57 by psegura-         ###   ########.fr        #
+#    Updated: 2023/12/31 20:35:29 by psegura-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,7 +65,7 @@ LIB = libft/libft.a
 
 CC = gcc
 
-CFLAGS = -Wall -Wextra -Werror #-fsanitize=address,leak
+CFLAGS = -Wall -Wextra -Werror -fsanitize=address,leak
 CFLAGS += -I inc -I libft
 
 all: $(NAME)
@@ -77,7 +77,7 @@ $(NAME): objs $(OBJS)
 
 $(BONUS): objsb $(OBJB)
 	@make -C libft
-	$(CC)  $(CFLAGS) $(OBJB) $(LIB) -o $(BONUS)
+	$(CC) $(CFLAGS) $(OBJB) $(LIB) -o $(BONUS)
 
 objs:
 	@mkdir -p	objs/srcs/moves objs/srcs/parser objs/srcs/stack \

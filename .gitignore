@@ -1,3 +1,4 @@
 *.o
-./push_swap_Tester/
+push_swap_Tester/
 push_swap
+.vscode
