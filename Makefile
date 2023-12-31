@@ -6,7 +6,7 @@
 #    By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/01 13:27:49 by psegura-          #+#    #+#              #
-#    Updated: 2023/12/31 20:42:17 by psegura-         ###   ########.fr        #
+#    Updated: 2023/12/31 23:50:56 by psegura-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,7 @@ SRCS =									\
 		algorithm/chunks/chunks.c		\
 		algorithm/chunks/chunks_utils.c	\
 		algorithm/radix/radix.c			\
+		algorithm/best_cost/best_cost.c	\
 		algorithm/utils.c				\
 										\
 		moves/single.c					\

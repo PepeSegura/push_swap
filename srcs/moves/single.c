@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 19:03:14 by psegura-          #+#    #+#             */
-/*   Updated: 2023/12/31 19:31:11 by psegura-         ###   ########.fr       */
+/*   Updated: 2024/01/01 00:06:12 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ void	swap(t_stack **stack, char c)
 		(*stack)->next->prev = *stack;
 	(*stack)->prev = second;
 	*stack = second;
-	write_move("s", c);
+	if (c == 'a' || c == 'b')
+		write_move("s", c);
 }
 
 void	push(char c, t_stack **dest, t_stack **src, t_info *info)
@@ -69,7 +70,8 @@ void	rotate(t_stack **stack, char c)
 	*stack = new_head;
 	if (new_head)
 		new_head->prev = NULL;
-	write_move("r", c);
+	if (c == 'a' || c == 'b')
+		write_move("r", c);
 }
 
 void	rrotate(t_stack **stack, char c)
@@ -84,5 +86,6 @@ void	rrotate(t_stack **stack, char c)
 	last->prev = NULL;
 	(*stack)->prev = last;
 	*stack = last;
-	write_move("rr", c);
+	if (c == 'a' || c == 'b')
+		write_move("rr", c);
 }

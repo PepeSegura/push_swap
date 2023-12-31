@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 02:17:23 by psegura-          #+#    #+#             */
-/*   Updated: 2023/12/31 19:25:54 by psegura-         ###   ########.fr       */
+/*   Updated: 2023/12/31 23:44:04 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ void	push_swap(t_stack **a, t_stack **b, t_info *info)
 	else if (info->size_a <= 100)
 		sort_chunks(a, b, info, 5);
 	else
-		radix(a, b, info);
+		best_cost(a, b, info);
 }

@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 20:08:44 by psegura-          #+#    #+#             */
-/*   Updated: 2023/12/31 19:51:50 by psegura-         ###   ########.fr       */
+/*   Updated: 2023/12/31 23:51:41 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,15 @@ void	sort_5(t_stack **a, t_stack **b, t_info *info);
 
 /* chunks */
 void	sort_chunks(t_stack **a, t_stack **b, t_info *info, int chunks);
+void	move_max_number_to_stack_a(t_stack **a, t_stack **b, t_info *info);
 int		numbers_in_chunk(t_stack *stack, int start, int end);
 int		is_current_greater_than_b(t_stack *a, t_stack *b);
 
 /* radix */
 void	radix(t_stack **a, t_stack **b, t_info *info);
+
+/* best_cost */
+void	best_cost(t_stack **a, t_stack **b, t_info *info);
 
 void	push_swap(t_stack **a, t_stack **b, t_info *info);
 
