@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 20:08:44 by psegura-          #+#    #+#             */
-/*   Updated: 2023/12/31 23:51:41 by psegura-         ###   ########.fr       */
+/*   Updated: 2024/02/13 00:57:39 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,10 @@ void	sort_3(t_stack **stack);
 void	sort_5(t_stack **a, t_stack **b, t_info *info);
 
 /* chunks */
+void	set_chunk_range(int *start, int *end, int numbers, int nb_chunks);
+void	move_to_top_next_number_from_chunk(t_stack **a, int end);
+void	push_number_to_stack_b(t_stack **a, t_stack **b, t_info *info);
+void	move_max_number_to_stack_a(t_stack **a, t_stack **b, t_info *info);
 void	sort_chunks(t_stack **a, t_stack **b, t_info *info, int chunks);
 void	move_max_number_to_stack_a(t_stack **a, t_stack **b, t_info *info);
 int		numbers_in_chunk(t_stack *stack, int start, int end);
