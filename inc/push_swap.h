@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 20:08:44 by psegura-          #+#    #+#             */
-/*   Updated: 2024/02/13 00:57:39 by psegura-         ###   ########.fr       */
+/*   Updated: 2024/03/04 04:40:06 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,10 @@ typedef struct s_info
 {
 	int	size_a;
 	int	size_b;
+	int	smaller_a;
+	int	biggest_a;
+	int	smaller_b;
+	int	biggest_b;
 }		t_info;
 
 /* algorithm.c */

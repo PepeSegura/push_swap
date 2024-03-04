@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 23:48:02 by psegura-          #+#    #+#             */
-/*   Updated: 2024/03/04 03:55:27 by psegura-         ###   ########.fr       */
+/*   Updated: 2024/03/04 04:01:57 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,12 @@ t_chunk *define_chunks(int stack_size, int nbr_chunks)
             chunks[i].upper_limit = stack_size - 1;
 		i++;
 	}
-	ft_dprintf(2, "stack_size: %d  number of chunks: %d size_chunks: %d\n", stack_size, nbr_chunks, stack_size / nbr_chunks);
-	for (int i = 0; i < nbr_chunks; i++)
-	{
-		ft_dprintf(2, "Chunk %d: [%d - %d]\n", i, chunks[i].lower_limit, chunks[i].upper_limit);	
-		ft_dprintf(2, "---------------------\n");
-	}
+	// ft_dprintf(2, "stack_size: %d  number of chunks: %d size_chunks: %d\n", stack_size, nbr_chunks, stack_size / nbr_chunks);
+	// for (int i = 0; i < nbr_chunks; i++)
+	// {
+	// 	ft_dprintf(2, "Chunk %d: [%d - %d]\n", i, chunks[i].lower_limit, chunks[i].upper_limit);	
+	// 	ft_dprintf(2, "---------------------\n");
+	// }
 	return (chunks);
 }
 

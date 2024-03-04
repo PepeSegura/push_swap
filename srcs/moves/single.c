@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 19:03:14 by psegura-          #+#    #+#             */
-/*   Updated: 2024/01/01 00:06:12 by psegura-         ###   ########.fr       */
+/*   Updated: 2024/03/04 05:07:21 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,23 @@ void	swap(t_stack **stack, char c)
 	*stack = second;
 	if (c == 'a' || c == 'b')
 		write_move("s", c);
+}
+
+
+void	update_info(int c, int nbr, t_info *info)
+{
+	if (c == 'b') //PUSH NUMBER FROM A -> B
+	{
+		if (nbr < info->smaller_b)
+			info->smaller_b = nbr;
+		else if (nbr > info->biggest_b)
+			info->biggest_b = nbr;
+
+		if (nbr == info->biggest_a)
+			info->biggest_a--;
+		if (nbr == info->smaller_a)
+			info->smaller_a++;
+	}
 }
 
 void	push(char c, t_stack **dest, t_stack **src, t_info *info)
