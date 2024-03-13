@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 21:37:13 by psegura-          #+#    #+#             */
-/*   Updated: 2024/03/04 04:55:45 by psegura-         ###   ########.fr       */
+/*   Updated: 2024/03/13 21:35:37 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,16 +80,6 @@ void	add_index(t_stack **stack)
 		current = current->next;
 	}
 }
-
-void	fill_info(t_info *info)
-{
-	info->biggest_a = -1;
-	info->biggest_b = -1;
-	info->smaller_a = 0;
-	info->smaller_b = info->size_a - 1;
-	ft_dprintf(2, "SA: [%d] SB: [%d] BA: [%d] BB: [%d]\n", info->smaller_a, info->smaller_b, info->biggest_a, info->biggest_b);
-}
-
 void	create_stack(t_stack **stack_a, t_info *info, char **argv)
 {
 	int	i;
@@ -99,5 +89,4 @@ void	create_stack(t_stack **stack_a, t_info *info, char **argv)
 		store_numbers(stack_a, info, argv[i]);
 	check_duplicates(*stack_a);
 	add_index(stack_a);
-	fill_info(info);
 }

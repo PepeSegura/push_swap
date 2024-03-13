@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 19:52:24 by psegura-          #+#    #+#             */
-/*   Updated: 2024/03/13 19:38:15 by psegura-         ###   ########.fr       */
+/*   Updated: 2024/03/13 22:07:19 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,26 +15,23 @@
 
 # include "push_swap.h"
 
-typedef struct s_node_info
-{
-	int	value;
-	int	index;
-	int	pos_in_stack;
-	int target;
-	int	dist_a;
-	int	dist_b;
-}	s_node_info;
-
-
 typedef struct s_stack {
 	int				index;
 	int				content;
+
+	/*  Algorithm */
+	int				pos; //pos_in_stack
+	int				target;
+	int				dist_a;
+	int				dist_b;
 	struct s_stack	*prev;
 	struct s_stack	*next;
 }	t_stack;
 
 t_stack	*stack_new(int content);
 t_stack	*stack_last(t_stack *stack);
+void	print_data(t_stack node);
+void	stack_iteri(t_stack *stack, void(*f)(t_stack));
 
 void	stack_add_back(t_stack **stack, t_stack *new);
 

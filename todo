@@ -1,6 +1,4 @@
 todo:
-    update info on each push move
     check stack and info structs
     ask help to daviles-
 
-void	update_info(int c, int nbr, t_info *info)
