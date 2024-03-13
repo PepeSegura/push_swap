@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/31 19:50:12 by psegura-          #+#    #+#             */
-/*   Updated: 2023/12/31 19:54:51 by psegura-         ###   ########.fr       */
+/*   Updated: 2024/03/04 03:01:26 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	find_top_chunk(t_stack *stack, int max)
 	moves = 0;
 	while (current)
 	{
-		if (current->index < max)
+		if (current->index <= max)
 			return (moves);
 		current = current->next;
 		moves++;
@@ -63,7 +63,7 @@ int	find_bottom_chunk(t_stack *stack, int max)
 	moves = 0;
 	while (current)
 	{
-		if (current->index < max)
+		if (current->index <= max)
 			return (moves + 1);
 		current = current->prev;
 		moves++;

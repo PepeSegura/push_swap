@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 19:52:24 by psegura-          #+#    #+#             */
-/*   Updated: 2024/01/28 20:06:06 by psegura-         ###   ########.fr       */
+/*   Updated: 2024/03/13 19:38:15 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,17 @@
 # define STACK_H
 
 # include "push_swap.h"
+
+typedef struct s_node_info
+{
+	int	value;
+	int	index;
+	int	pos_in_stack;
+	int target;
+	int	dist_a;
+	int	dist_b;
+}	s_node_info;
+
 
 typedef struct s_stack {
 	int				index;

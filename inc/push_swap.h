@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 20:08:44 by psegura-          #+#    #+#             */
-/*   Updated: 2023/12/31 23:51:41 by psegura-         ###   ########.fr       */
+/*   Updated: 2024/03/04 04:40:06 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,10 @@ typedef struct s_info
 {
 	int	size_a;
 	int	size_b;
+	int	smaller_a;
+	int	biggest_a;
+	int	smaller_b;
+	int	biggest_b;
 }		t_info;
 
 /* algorithm.c */
@@ -30,6 +34,10 @@ void	sort_3(t_stack **stack);
 void	sort_5(t_stack **a, t_stack **b, t_info *info);
 
 /* chunks */
+void	set_chunk_range(int *start, int *end, int numbers, int nb_chunks);
+void	move_to_top_next_number_from_chunk(t_stack **a, int end);
+void	push_number_to_stack_b(t_stack **a, t_stack **b, t_info *info);
+void	move_max_number_to_stack_a(t_stack **a, t_stack **b, t_info *info);
 void	sort_chunks(t_stack **a, t_stack **b, t_info *info, int chunks);
 void	move_max_number_to_stack_a(t_stack **a, t_stack **b, t_info *info);
 int		numbers_in_chunk(t_stack *stack, int start, int end);
