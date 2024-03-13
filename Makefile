@@ -6,7 +6,7 @@
 #    By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/01 13:27:49 by psegura-          #+#    #+#              #
-#    Updated: 2024/01/24 20:58:58 by psegura-         ###   ########.fr        #
+#    Updated: 2024/02/06 18:55:57 by psegura-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -111,7 +111,7 @@ re:: fclean
 re:: all
 
 tester:
-	@git clone git@github.com:PepeSegura/push_swap_Tester.git pepe_Tester 2> /dev/null ; make -C pepe_Tester m
+	@git clone git@github.com:PepeSegura/push_swap_Tester.git pepe_Tester  ; make -C pepe_Tester m
 
 norma:
 	@echo 6e6f726d696e65747465207372637320696e6320313e2f6465762f6e756c6c3b206966205b5b20243f202d65712030205d5d3b207468656e206e6f726d696e65747465207372637320696e633b20656c7365206e6f726d696e65747465207372637320696e63207c206772657020274572726f7227203b206669 | xxd -r -p | zsh
