@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 02:17:23 by psegura-          #+#    #+#             */
-/*   Updated: 2024/03/16 21:24:35 by psegura-         ###   ########.fr       */
+/*   Updated: 2024/03/17 00:29:06 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ void	push_swap(t_stack **a, t_stack **b, t_info *info)
 	else if (info->size_a <= 100)
 		best_cost(a, b, info);
 	else
-		best_cost(a, b, info);
+		turk_chunks(a, b, info, info->size_a / 7);
 }

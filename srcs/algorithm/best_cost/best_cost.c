@@ -6,45 +6,11 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 23:48:02 by psegura-          #+#    #+#             */
-/*   Updated: 2024/03/16 21:30:31 by psegura-         ###   ########.fr       */
+/*   Updated: 2024/03/17 00:43:08 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-t_chunk	*define_chunks(int stack_size, int nbr_chunks)
-{
-	t_chunk	*chunks;
-	int		i;
-
-	chunks = ft_calloc(nbr_chunks + 1, sizeof(t_chunk));
-	i = 0;
-	while (i < nbr_chunks)
-	{
-		chunks[i].lower_limit = i * (stack_size / nbr_chunks);
-		chunks[i].upper_limit = (i + 1) * (stack_size / nbr_chunks) - 1;
-		if (i == nbr_chunks - 1)
-			chunks[i].upper_limit = stack_size - 1;
-		i++;
-	}
-	return (chunks);
-}
-
-int	is_number_on_chunk(int number, t_chunk chunk)
-{
-	return (number >= chunk.lower_limit && number <= chunk.upper_limit);
-}
-
-int	ammount_of_numbers_in_chunk(t_stack *stack, t_chunk chunk)
-{
-	while (stack)
-	{
-		if (is_number_on_chunk(stack->index, chunk))
-			return (1);
-		stack = stack->next;
-	}
-	return (0);
-}
 
 void	move_min_index_to_top(t_stack **a, t_info *info)
 {
@@ -98,6 +64,46 @@ void	move_max_index_to_top(t_stack **b, t_info *info)
 	}
 }
 
+void	push_two_chunks(t_stack **a, t_stack **b, t_info *info, int chunk_limit)
+{
+	size_t	i;
+	size_t	size;
+
+	i = 0;
+	size = info->size_a;
+	while (i < size)
+	{
+		if ((*a)->index < chunk_limit)
+			push('b', b, a, info);
+		else if ((*a)->index > (info->size_a - chunk_limit))
+		{
+			push('b', b, a, info);
+			rotate(b, 'b');
+		}
+		else
+			rotate(a, 'a');
+		if (info->size_a <= 3)
+			break ;
+		i++;
+	}
+}
+
+void	turk_chunks(t_stack **a, t_stack **b, t_info *info, size_t chunk_size)
+{
+	int	i;
+
+	i = 1;
+	while (info->size_a > 3)
+	{
+		push_two_chunks(a, b, info, chunk_size * i);
+		i++;
+	}
+	sort_3(a);
+	while (info->size_b > 0)
+		move_cheapest_b_to_a(b, a, info);
+	move_min_index_to_top(a, info);
+}
+
 void	best_cost(t_stack **a, t_stack **b, t_info *info)
 {
 	push('b', b, a, info);
@@ -109,13 +115,3 @@ void	best_cost(t_stack **a, t_stack **b, t_info *info)
 		push('a', a, b, info);
 	move_min_index_to_top(a, info);
 }
-
-// #define N_CHUNKS 3
-
-// t_chunk *chunks;
-// int		i;
-
-// chunks = define_chunks(info->size_a, N_CHUNKS);
-// i = 2;
-// while (i-- > 0)
-// free(chunks);

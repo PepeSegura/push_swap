@@ -6,7 +6,7 @@
 #    By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/01 13:27:49 by psegura-          #+#    #+#              #
-#    Updated: 2024/03/16 21:22:37 by psegura-         ###   ########.fr        #
+#    Updated: 2024/03/17 00:44:53 by psegura-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,51 +15,51 @@ MAKEFLAGS += --no-print-directory
 NAME = push_swap
 BONUS = checker
 
-SRCS =									\
-		main.c							\
-		tools.c							\
-		parser/parser.c					\
-										\
-		stack/create_stack.c			\
-		stack/stack_add_back.c			\
-		stack/stack_printer.c			\
-		stack/stack_last.c				\
-		stack/stack_new.c				\
-		stack/stack_size.c				\
-										\
-		algorithm/push_swap.c			\
-		algorithm/basic/sort_3.c		\
-		algorithm/basic/sort_5.c		\
-		algorithm/chunks/chunks.c		\
-		algorithm/chunks/chunks_utils.c	\
-		algorithm/radix/radix.c			\
-		algorithm/best_cost/best_cost.c	\
-		algorithm/best_cost/calc_a_to_b.c\
-		algorithm/best_cost/target_and_dist_a.c\
-		algorithm/best_cost/target_and_dist_b.c\
-		algorithm/best_cost/calc_b_to_a.c\
-		algorithm/best_cost/shared_functions.c\
-		algorithm/utils.c				\
-										\
-		moves/single.c					\
-		moves/double.c					\
+SRCS =											\
+		main.c									\
+		tools.c									\
+		parser/parser.c							\
+												\
+		stack/create_stack.c					\
+		stack/stack_add_back.c					\
+		stack/stack_printer.c					\
+		stack/stack_last.c						\
+		stack/stack_new.c						\
+		stack/stack_size.c						\
+												\
+		algorithm/choose_algorithm.c			\
+		algorithm/basic/sort_3.c				\
+		algorithm/basic/sort_5.c				\
+		algorithm/chunks/chunks.c				\
+		algorithm/chunks/chunks_utils.c			\
+		algorithm/radix/radix.c					\
+		algorithm/best_cost/best_cost.c			\
+		algorithm/best_cost/calc_a_to_b.c		\
+		algorithm/best_cost/target_and_dist_a.c	\
+		algorithm/best_cost/target_and_dist_b.c	\
+		algorithm/best_cost/calc_b_to_a.c		\
+		algorithm/best_cost/shared_functions.c	\
+		algorithm/utils.c						\
+												\
+		moves/single.c							\
+		moves/double.c							\
 
 
-SRCB =									\
-		bonus/main.c					\
-		tools.c							\
-		parser/parser.c					\
-										\
-		stack/create_stack.c			\
-		stack/stack_add_back.c			\
-		stack/stack_last.c				\
-		stack/stack_new.c				\
-		stack/stack_size.c				\
-										\
-		moves/single.c					\
-		moves/double.c					\
-										\
-		algorithm/utils.c				\
+SRCB =											\
+		bonus/main.c							\
+		tools.c									\
+		parser/parser.c							\
+												\
+		stack/create_stack.c					\
+		stack/stack_add_back.c					\
+		stack/stack_last.c						\
+		stack/stack_new.c						\
+		stack/stack_size.c						\
+												\
+		moves/single.c							\
+		moves/double.c							\
+												\
+		algorithm/utils.c						\
 
 SRCS_PREFIX = $(addprefix srcs/, $(SRCS))
 SRCB_PREFIX = $(addprefix srcs/, $(SRCB))

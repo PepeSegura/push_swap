@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 19:52:24 by psegura-          #+#    #+#             */
-/*   Updated: 2024/03/16 21:35:33 by psegura-         ###   ########.fr       */
+/*   Updated: 2024/03/17 00:28:21 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ typedef struct s_stack
 {
 	int				index;
 	int				content;
-	/*  Algorithm */
 	int				pos;
 	int				target;
 	int				dist_a;

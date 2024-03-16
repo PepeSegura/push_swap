@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 20:08:44 by psegura-          #+#    #+#             */
-/*   Updated: 2024/03/16 21:32:50 by psegura-         ###   ########.fr       */
+/*   Updated: 2024/03/17 00:29:06 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ int		is_current_greater_than_b(t_stack *a, t_stack *b);
 void	radix(t_stack **a, t_stack **b, t_info *info);
 
 /* best_cost */
+void	turk_chunks(t_stack **a, t_stack **b, t_info *info, size_t chunk_size);
 void	best_cost(t_stack **a, t_stack **b, t_info *info);
 void	move_cheapest_a_to_b(t_stack **a, t_stack **b, t_info *info);
 void	set_target_and_dist_a(t_stack **a, t_stack **b, t_info *info);
