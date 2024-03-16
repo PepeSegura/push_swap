@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 21:37:13 by psegura-          #+#    #+#             */
-/*   Updated: 2024/03/13 21:35:37 by psegura-         ###   ########.fr       */
+/*   Updated: 2024/03/16 20:27:50 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ void	add_index(t_stack **stack)
 		current = current->next;
 	}
 }
+
 void	create_stack(t_stack **stack_a, t_info *info, char **argv)
 {
 	int	i;

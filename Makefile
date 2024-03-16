@@ -6,7 +6,7 @@
 #    By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/01 13:27:49 by psegura-          #+#    #+#              #
-#    Updated: 2024/03/13 21:35:18 by psegura-         ###   ########.fr        #
+#    Updated: 2024/03/16 21:22:37 by psegura-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,11 @@ SRCS =									\
 		algorithm/chunks/chunks_utils.c	\
 		algorithm/radix/radix.c			\
 		algorithm/best_cost/best_cost.c	\
+		algorithm/best_cost/calc_a_to_b.c\
+		algorithm/best_cost/target_and_dist_a.c\
+		algorithm/best_cost/target_and_dist_b.c\
+		algorithm/best_cost/calc_b_to_a.c\
+		algorithm/best_cost/shared_functions.c\
 		algorithm/utils.c				\
 										\
 		moves/single.c					\
@@ -66,7 +71,7 @@ LIB = libft/libft.a
 
 CC = gcc
 
-CFLAGS = -Wall -Wextra -Werror #-fsanitize=address,leak
+CFLAGS = -Wall -Wextra -Werror -O3 -fsanitize=address#,leak
 CFLAGS += -I inc -I libft
 
 all: $(NAME)
