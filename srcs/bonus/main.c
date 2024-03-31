@@ -17,7 +17,7 @@ void	make_move(char *move, t_stack **a, t_stack **b, t_info *info)
 	if (!ft_strcmp(move, "sa\n"))
 		swap(a, 'a');
 	else if (!ft_strcmp(move, "sb\n"))
-		swap(a, 'b');
+		swap(b, 'b');
 	else if (!ft_strcmp(move, "ss\n"))
 		double_swap(a, b);
 	else if (!ft_strcmp(move, "pa\n"))
